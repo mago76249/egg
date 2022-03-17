@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title>egg</title>
+    <style>
+      img{
+        width: 100px;
+      }
+      div{
+        position: absolute;
+        left: 270px;
+        transition: ease-in 0.7s;
+      }
+      #pan{
+        position: absolute;
+        left: 200px;
+        top: 480px;
+        width: 300px;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body style="background-color: #D4D4D4;">
+    <script>
+      const rand = Math.floor(Math.random() * 2);
+      if (rand == 1){
+        document.write("<div><img id='imgid' src= 'egg2.png'></div>");
+      }else {
+        document.write("<div><img id='imgid2' src= 'egg1.png'></div>");
+      }
+      document.querySelector('div').addEventListener('click', function(){
+        document.querySelector('div').style.transform = 'translateY(480px)';
+        setTimeout(function() {
+          document.getElementById("imgid").src = "egg2-broken.png";
+        },565);
+        setTimeout(function() {
+          document.getElementById("imgid2").src = "egg1-broken.png";
+        },565);
+      })
+    </script>
+      <img id="pan" src="frying pan.png">
+  </body>
+</html>
